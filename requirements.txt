@@ -1,0 +1,13 @@
+time
+gtts
+openal
+os
+subprocess
+serial
+math
+numpy
+argparse
+datetime
+random
+cv2
+matplotlib.pyplot 
