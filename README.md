@@ -40,8 +40,8 @@ ODTSVI (Object Detection and Tracking System for Visually Impaired) is a project
 1. Clone this repository to your Raspberry Pi:
 
 ```bash
-git clone <repository_url>
-cd ODTSVI
+git clone https://github.com/zaki-x86/LiDAR-object-detection
+cd LiDAR-object-detection
 ```
 
 1. Install the required libraries and dependencies (see [Libraries and Dependencies](#libraries-and-dependencies)).
@@ -61,7 +61,7 @@ python3 main.py
 ## Project Structure
 
 - `main.py`: The main script that handles video streaming, object detection, tracking, and LiDAR integration.
-- `SoundFunc.py`: Contains the `SoundFunc` function responsible for playing sound alerts to the user.
+- `sound.py`: Contains the `SoundFunc` function responsible for playing sound alerts to the user.
 - `lidar.py`: Defines the `lidarfunc` function and classes for handling LiDAR data processing.
 - `README.md`: This README file.
 
@@ -78,7 +78,7 @@ The following libraries and dependencies are required to run the ODTSVI project:
 You can install these dependencies using `pip`:
 
 ```bash
-pip install numpy opencv-python tensorflow-lite gtts openal
+pip install -r requirements.txt
 ```
 
 ## How It Works

@@ -234,7 +234,7 @@ multi_tracker = cv2.legacy.MultiTracker_create()
 
 boxesupdt = []
 bboxes = []
-colours = []
+colors = []
 scores_tracked = []
 classes_tracked = []
 distances_tracked = []
@@ -310,7 +310,7 @@ while True:
                 # Add ROIs to list of bounding boxes
                 if not distance(bbox, boxesupdt):
                     multi_tracker.add(create_tracker_by_name(args2["tracker"].upper()), frame, bbox)  # Add ROI's to tracker
-                    colours.append((randint(0, 255), randint(0, 255), randint(0, 255)))  # Create random colour for each box
+                    colors.append((randint(0, 255), randint(0, 255), randint(0, 255)))  # Create random colour for each box
                     # Add ROI tracked scores and classes to new lists
                     scores_tracked.append(scores[i])
                     classes_tracked.append(classes[i])
@@ -351,7 +351,7 @@ while True:
                 label2_dist = '%s Meters' % (distances_tracked[i])  # Example: 'person: 72% 4M'
                 labelSize, baseLine = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 1)  # Get font size
                 label_ymin = max(y + h, labelSize[1] + 10)  # Make sure not to draw label too close to top of window
-                cv2.rectangle(frame, (x, y), (x + w, y + h), (colours[i]), 3)  # Make rectangle at the object location
+                cv2.rectangle(frame, (x, y), (x + w, y + h), (colors[i]), 3)  # Make rectangle at the object location
                 cv2.rectangle(frame, (x, label_ymin - labelSize[1] - 30), (x + labelSize[0] + 10, label_ymin + baseLine - 10), (255, 255, 255), cv2.FILLED)  # Draw white box to put label text in
                 cv2.putText(frame, label2_dist, (x, label_ymin - 7), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 1)  # Draw Distance label text
                 cv2.putText(frame, label, (x, label_ymin - 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 1)  # Draw label text

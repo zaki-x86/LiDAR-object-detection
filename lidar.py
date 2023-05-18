@@ -65,7 +65,7 @@ def CalcLidarData(str):
         elif i >= minus_311:
             Distance_norm.append(Distance_i[Angle_i.index(i)])
             Angle_norm.append(((i - minus_311) / plus_311) * 0.5)
-            print(i, (i / (2*math.pi)) * 0.5, Distance_i[Angle_i.index(i)])
+            #print(i, (i / (2*math.pi)) * 0.5, Distance_i[Angle_i.index(i)])
 
     # Angle_norm = (np.array(Angle_norm) + plus_311).tolist()
     # if len(Angle_norm) >= 2:
